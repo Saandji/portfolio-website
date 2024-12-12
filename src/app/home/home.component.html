@@ -1,0 +1,174 @@
+<!-- Background Video Section -->
+<div class="background-video" id="top">
+  <div class="darken-layer"></div>
+  <video #backgroundVideo autoplay [muted]="'muted'"  loop playsinline>
+    <source src="/balcony-still.mp4" type="video/mp4"/>
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay">
+    <h1>SAM SHEND VIDEOGRAPHY</h1>
+    <p>NATURE | OUTDOORS | REAL STORIES</p>
+  </div>
+</div>
+
+<section class="section about-me" id="about">
+  <div class="container">
+    <div class="row justify-content-center txt-bg txt-bg-about">
+      <div class="col-lg-6 pointer">
+        <div class="section-title text-center mb-4 pb-2">
+          <h2 class="h3 font-weight-bold">About Me</h2>
+          <p class="text-muted mx-auto mb-0 mt-4 para-desc">Explore who I am, what I do, and why I do it.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 mt-4 pt-2">
+      <ul class="nav-tabs nav-fill" id="aboutTabs"
+          [ngStyle]="{
+                'background-color': activeTab === 'what'
+                  ? '#723600'
+                  : 'var(--mat-sys-secondary-container)'
+              }">
+        <li id="selector"></li>
+        @for (tab of aboutData.NavTabs; track tab.id) {
+          <li class="nav-item">
+            <button
+              mat-button
+              class="nav-link"
+              [ngClass]="{ active: activeTab === tab.id, disabled: activeTab === tab.id, 'orange-tab': tab.id === 'what' }"
+              (click)="activeTab !== tab.id && changeActiveTab(tab.id)"
+              id="{{ tab.id }}-tab"
+            >
+              {{ tab.name }}
+            </button>
+          </li>
+        }
+      </ul>
+
+
+      <div class="tab-content" id="aboutTabContent">
+
+        <!-- "Who I Am" Tab -->
+        @if (activeTab === 'who') {
+          <div class="tab-pane fade active show" id="who" aria-labelledby="who-tab">
+            <div class="tab-pane-content">
+              <div class="tab-text">
+                <p class="text-muted">
+                  Hi, I’m <strong>Sam</strong>, a filmmaker and videographer based in <strong>Garmisch-Partenkirchen,
+                  Germany</strong>.
+                </p>
+                <p class="text-muted">
+                  I specialize in capturing the <strong>raw beauty of nature</strong>, the <strong>thrill of outdoor
+                  adventures</strong>, and the <strong>authenticity of human stories</strong>.
+                  With a deep understanding of storytelling and visual composition, I’m here to help you bring your
+                  vision to life—whether it’s a personal project, a brand story, or a dynamic action sequence.
+                </p>
+              </div>
+              <div class="tab-image">
+                <img src="/Mountains-Snowboard.jpg" alt="Who I Am" class="img-fluid rounded"/>
+              </div>
+            </div>
+          </div>
+
+        }
+
+        <!-- "What I Do" Tab -->
+        @if (activeTab === 'what') {
+          <div class="tab-pane fade active show" id="what" aria-labelledby="what-tab">
+            <div class="tab-pane-content">
+              <div class="tab-text">
+                <p class="text-muted">
+                  My work blends a background in concept art, years of experience in software engineering, and a passion
+                  for outdoor sports to deliver stunning visuals that tell a story.
+                  Whether you need <strong>action-packed athlete features</strong>, serene <strong>nature
+                  sequences</strong>, or compelling <strong>brand storytelling</strong>, I bring technical expertise and
+                  a creative vision to every project.
+                </p>
+                <p class="text-muted">
+                  I pride myself on understanding my clients’ needs and collaborating closely to create visuals that not
+                  only inspire but also connect with your audience.
+                  Let’s work together to craft a visual narrative that speaks directly to your vision and goals.
+                </p>
+              </div>
+              <div class="tab-image">
+                <img src="/Forest-camera.jpg" alt="What I Do" class="img-fluid rounded"/>
+              </div>
+            </div>
+          </div>
+
+        }
+
+        <!-- "Why I Do It" Tab -->
+        @if (activeTab === 'why') {
+          <div class="tab-pane fade active show" id="why" aria-labelledby="why-tab">
+            <div class="tab-pane-content">
+              <div class="tab-text">
+                <p class="text-muted">
+                  I believe that every story, whether it’s about a place, a person, or a brand, deserves to be told in a
+                  way that resonates with its audience.
+                  My love for the outdoors, storytelling, and creating meaningful connections drives me to produce work
+                  that goes beyond just visuals—it captures emotions and inspires action.
+                </p>
+                <p class="text-muted">
+                  When we work together, my goal is simple: to bring your story to life with creativity, authenticity,
+                  and an uncompromising attention to detail.
+                  Let’s create something that not only looks amazing but leaves a lasting impression.
+                </p>
+              </div>
+              <div class="tab-image">
+                <video autoplay [muted]="'muted'" loop playsinline class="img-fluid rounded">
+                  <source src="/about_video_short.mp4" type="video/mp4"/>
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+        }
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-info mat-elevation-z4">
+  <div class="contact-container">
+    <div class="contact-header">
+      <fa-icon [icon]="'headphones'" class="icon-tertiary contact-icon"></fa-icon>
+      <h2 class="contact-title">Contact Me</h2>
+      <p class="contact-description">
+        Get in touch via email, phone, or follow me on social platforms.
+      </p>
+    </div>
+
+    <div class="contact-details">
+      <div class="contact-item">
+        <fa-icon class="icon-secondary" [icon]="'envelope'"></fa-icon>
+        <p>
+          <a href="mailto:shendyapin.s@gmail.com">shendyapin.s&#64;gmail.com</a>
+        </p>
+      </div>
+      <div class="contact-item">
+        <fa-icon class="icon-secondary" [icon]="'phone'"></fa-icon>
+        <p>
+          <a href="tel:+4915756789118">+49 (157) 56789-118</a>
+        </p>
+      </div>
+      <div class="contact-item">
+        <p><strong>Follow Me:</strong></p>
+        <div class="social-icons">
+          <a href="https://instagram.com/sam.shend" target="_blank">
+            <fa-icon [icon]="['fab', 'instagram']" class="icon-tertiary"></fa-icon>
+          </a>
+          <a href="https://www.youtube.com/@SamOutdoorsFilms" target="_blank">
+            <fa-icon [icon]="['fab', 'youtube']" class="icon-tertiary"></fa-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Semen Shendyapin. All Rights Reserved.</p>
+</footer>

@@ -1,0 +1,66 @@
+/* Toolbar Styling */
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: var(--mat-sys-surface-dim); /* Toolbar background */
+  color: var(--mat-sys-on-secondary-container); /* Text color */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Header Title */
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--mat-sys-on-secondary-container); /* Text color */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Menu button for mobile */
+.menu-button {
+  display: none; /* Hidden on larger screens */
+  color: var(--mat-sys-on-secondary-container);
+}
+
+.desktop-links {
+  display: flex;
+  gap: 1rem; /* Add spacing between links */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .desktop-links {
+    display: none; /* Hide links on smaller screens */
+  }
+
+  .menu-button {
+    display: inline-block; /* Show menu button on mobile */
+  }
+
+  mat-toolbar {
+    justify-content: space-between;
+  }
+}
+
+/* Mobile Sidenav */
+.mobile-sidenav {
+  background-color: var(--mat-sys-surface); /* Background for sidenav */
+  color: var(--mat-sys-on-surface); /* Text color */
+  width: 80%; /* Set a width for the sidenav */
+  padding: 1rem;
+}
+
+.mobile-sidenav a {
+  display: block;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: var(--mat-sys-on-surface);
+  font-size: 1.2rem;
+}
+
+.mobile-sidenav a:hover {
+  color: var(--mat-sys-secondary); /* Highlight on hover */
+}

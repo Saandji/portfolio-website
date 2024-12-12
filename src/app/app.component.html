@@ -1,0 +1,27 @@
+<mat-toolbar class="sticky-header" [class.scrolled]="isScrolled" color="secondary">
+  <!-- Header Title on the Left -->
+  <a [routerLink]="'/'" fragment="top" class="header-title">Sam Shend</a>
+  <span class="spacer"></span>
+
+  <!-- Links for larger screens -->
+  <div class="desktop-links">
+    <a mat-button [routerLink]="'/'" fragment="about" [class.active]="isActive('/', 'about')">About Me</a>
+    <a mat-button [routerLink]="'/'" fragment="contact" [class.active]="isActive('/', 'contact')">Contact</a>
+    <a mat-button [routerLink]="'/portfolio'" [class.active]="isActive('/portfolio')">Portfolio</a>
+  </div>
+
+  <!-- Menu button for mobile screens -->
+  <button mat-icon-button (click)="toggleSidenav()" class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!-- Sidenav for mobile -->
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" position="end" class="mobile-sidenav" [disableClose]="false">
+    <a mat-list-item [routerLink]="'/'" fragment="about" (click)="toggleSidenav()">About Me</a>
+    <a mat-list-item [routerLink]="'/'" fragment="contact" (click)="toggleSidenav()">Contact</a>
+    <a mat-list-item [routerLink]="'/portfolio'" (click)="toggleSidenav()">Portfolio</a>
+  </mat-sidenav>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

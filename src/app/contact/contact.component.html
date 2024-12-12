@@ -1,0 +1,23 @@
+<div class="contact-container">
+  <h2>Contact Me</h2>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Your Name" name="name" ngModel required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Your Email" name="email" ngModel required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Message</mat-label>
+      <textarea matInput placeholder="Your Message" name="message" ngModel required></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="secondary" type="submit" [disabled]="contactForm.invalid">
+      Send Message
+    </button>
+  </form>
+</div>

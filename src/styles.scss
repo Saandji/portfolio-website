@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+
+// Core styles (required for Material components)
+@include mat.core();
+
+// Apply default theme (optional)
+html {
+  color-scheme: light dark;
+  @include mat.theme((
+    color: (
+      primary: mat.$cyan-palette,
+      tertiary: mat.$orange-palette,
+      theme-type: dark,
+    ),
+    typography: Roboto,
+    density: 0
+  ));
+}
+
+body {
+  margin: 0;
+}

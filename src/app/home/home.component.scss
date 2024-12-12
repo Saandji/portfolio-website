@@ -1,0 +1,386 @@
+@use '@angular/material' as mat;
+@use '../../styles.scss' as *;
+
+.background-video {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full-screen height */
+  overflow: hidden; /* Hide overflow */
+}
+
+.background-video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video fills the container */
+}
+
+.darken-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Slightly darken the video */
+  z-index: 1; /* Place it above the video */
+}
+
+.overlay {
+  position: absolute;
+  top: 10%; /* Upper third of the video */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white; /* Make text white */
+  z-index: 2; /* Place it above the darken layer */
+}
+
+.overlay h1 {
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase; /* Force all caps */
+  letter-spacing: 0.3rem; /* Adjust spacing for readability */
+  font-size: 3rem; /* Default size */
+  margin: 0.5rem 0;
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Ensure text doesn't overflow container */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.overlay p {
+  font-family: 'Proxima Nova', sans-serif;
+  text-transform: uppercase; /* Force all caps */
+  letter-spacing: 0.8rem; /* Adjust spacing for readability */
+  font-weight: 100;
+  font-size: 1.5rem; /* Default size */
+  margin: 0.5rem 0;
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Ensure text doesn't overflow container */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2rem; /* Reduce size for smaller screens */
+    letter-spacing: 0.1rem; /* Reduce spacing */
+    white-space: normal; /* Allow line breaks */
+    overflow: visible; /* Ensure all text is visible */
+    text-overflow: clip; /* Remove ellipsis */
+    line-height: 1.2; /* Adjust line spacing */
+    word-wrap: normal; /* Break long words if necessary */
+    word-break: normal; /* Ensure wrapping for iPhones */
+  }
+
+  .overlay p {
+    font-size: 1rem; /* Reduce size for smaller screens */
+    letter-spacing: 0.3rem; /* Reduce spacing */
+    white-space: normal; /* Allow line breaks */
+    overflow: visible; /* Ensure all text is visible */
+    text-overflow: clip; /* Remove ellipsis */
+    line-height: 1.5; /* Adjust line spacing */
+    word-wrap: normal; /* Break long words if necessary */
+    word-break: normal; /* Ensure wrapping for iPhones */
+  }
+}
+
+/* Specific Adjustments for iPhone Sizes */
+@media (max-width: 480px) {
+  .overlay h1 {
+    font-size: 1.8rem; /* Smaller font size for very small screens */
+  }
+
+  .overlay p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+  .background-video video {
+    height: 100%; /* Fill the height for mobile devices */
+    width: auto; /* Maintain aspect ratio */
+  }
+}
+
+
+.about-me {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  padding: 3rem 1rem;
+  text-align: left; /* Align text to the left */
+  background-color: var(--mat-sys-surface); /* Use a surface color for contrast */
+  color: var(--mat-sys-on-surface);
+
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack text and image vertically */
+    padding: 2rem 1rem;
+  }
+}
+
+
+#about {
+  background-color: var(--mat-sys-surface-dim); /* Use theme background */
+  padding: 3rem 0;
+
+  .section-title {
+    text-align: center;
+    color: var(--mat-sys-on-surface-container); /* Text color based on surface container */
+  }
+
+  .nav-tabs {
+    display: flex;
+    justify-content: center;
+    list-style: none; /* Remove list dots */
+    padding: 0.5rem 1rem; /* Add padding to the container */
+    margin: 0 auto; /* Center the nav-tabs */
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: relative;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    background-color: var(--mat-sys-secondary-container); /* Theme secondary container */
+    color: var(--mat-sys-on-secondary-container); /* Text color */
+    max-width: 90%; /* Prevent nav from spanning the full width */
+  }
+
+  .nav-item {
+    flex: 1; /* Distribute space evenly */
+    text-align: center;
+  }
+
+  .nav-link {
+    width: 100%;
+    display: flex; /* Use flexbox for consistent alignment */
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    padding: 0.75rem 1.5rem; /* Consistent padding for links */
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px; /* Button-like appearance */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+    color: var(--mat-sys-on-secondary-container); /* Text color */
+  }
+
+  .nav-link.mat-button {
+    color: var(--mat-sys-on-primary); /* Text color */
+    background-color: transparent; /* Default background for buttons */
+  }
+
+  .nav-link.mat-button:hover {
+    background-color: var(--mat-sys-secondary-light); /* Hover background */
+    color: var(--mat-sys-on-secondary-light); /* Hover text color */
+  }
+
+  .nav-link.active {
+    background-color: var(--mat-sys-secondary); /* Active tab background */
+    color: var(--mat-sys-on-secondary); /* Active tab text color */
+    font-weight: bold;
+    pointer-events: none; /* Disable pointer events for active tabs */
+    cursor: default;
+  }
+
+  .nav-link.disabled:hover {
+    background-color: var(--mat-sys-secondary); /* Keep the active background */
+    color: var(--mat-sys-on-secondary); /* Maintain the text color */
+    cursor: default; /* Prevent hover effect for disabled state */
+  }
+
+  .nav-link:hover {
+    cursor: pointer;
+    background-color: var(--mat-sys-secondary-light); /* Hover background color */
+    color: var(--mat-sys-on-secondary-light); /* Hover text color */
+  }
+  .nav-link.active.orange-tab {
+    background-color: #ffb787; /* Active tab background */
+  }
+
+  .tab-content {
+    margin-top: 2rem; /* Add spacing between nav-tabs and tab-content */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: 300px; /* Ensure consistent height for the content */
+
+    /* Center alignment for smaller screens */
+    @media (max-width: 768px) {
+      flex-direction: column; /* Stack items vertically */
+      text-align: center; /* Center-align text */
+      padding: 0 1rem; /* Add some horizontal padding */
+    }
+
+    /* Fixed width for larger screens */
+    @media (min-width: 1024px) {
+      max-width: 1200px; /* Set a fixed maximum width for the container */
+      margin: 2rem auto 0; /* Center the container and add spacing */
+    }
+
+    .tab-pane-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      justify-content: space-between;
+
+      @media (max-width: 768px) {
+        flex-direction: column; /* Stack text and image vertically on mobile */
+        text-align: center; /* Center-align content */
+      }
+
+      .tab-text {
+        flex: 1;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: var(--mat-sys-on-surface-container); /* Text color */
+      }
+
+      .tab-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          max-width: 100%;
+          max-height: 600px;
+          object-fit: cover;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        video {
+          max-width: 100%;
+          max-height: 600px;
+          object-fit: cover;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+      }
+    }
+  }
+
+
+}
+.contact-info {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  font-size: 3rem;
+  color: var(--mat-sys-tertiary);
+  margin-bottom: 1rem;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--mat-sys-on-surface);
+  margin-bottom: 0.5rem;
+}
+
+.contact-description {
+  font-size: 1.2rem;
+  color: var(--mat-sys-on-surface-variant);
+  margin-bottom: 2rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  flex: 1 1 calc(33.333% - 1rem);
+  text-align: center;
+  background-color: var(--mat-sys-surface-container);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: var(--mat-sys-on-surface);
+  }
+
+  a {
+    color: var(--mat-sys-secondary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--mat-sys-secondary-dark);
+    text-decoration: underline;
+  }
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+
+  a {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--mat-sys-tertiary-dark); /* Adjust hover color for icons */
+  }
+
+  .fa-instagram {
+    color: var(--mat-sys-tertiary); /* Instagram icon color */
+  }
+
+  .fa-youtube {
+    color: var(--mat-sys-error); /* YouTube icon color */
+  }
+
+  .fa-instagram:hover {
+    color: var(--mat-sys-tertiary-dark); /* Darker Instagram color */
+  }
+
+  .fa-youtube:hover {
+    color: var(--mat-sys-error-dark); /* Darker YouTube color */
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--mat-sys-surface-variant);
+  color: var(--mat-sys-on-surface-variant);
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: var(--mat-sys-on-surface-variant);
+}

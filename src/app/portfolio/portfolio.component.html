@@ -1,0 +1,60 @@
+<div class="portfolio-page">
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    @for (filter of filters; track filter) {
+      <button
+        mat-raised-button
+        (click)="applyFilter(filter)"
+        [ngClass]="{ active: activeFilter === filter }"
+      >
+        {{ filter }}
+      </button>
+    }
+  </div>
+
+  <!-- Portfolio Sections -->
+  @for (section of sections; track section.type) {
+    <section
+      [ngClass]="{ hidden: activeFilter !== 'All' && activeFilter !== section.type }"
+      class="portfolio-section"
+    >
+      <!-- Section Title and Description -->
+      <div class="section-header">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.description }}</p>
+      </div>
+
+      <div
+        class="section-content"
+        [ngClass]="{ 'alternate-layout': section.alternateLayout }"
+      >
+        <!-- Gallery -->
+        <div class="section-gallery">
+          <mat-grid-list cols="4" rowHeight="200px" gutterSize="16px">
+            @for (tileItem of section.videos; track tileItem.id) {
+              @if (tileItem.src === '' && tileItem.extraInfo != undefined) {
+                <!-- Additional Tile with Section Information -->
+                <mat-grid-tile [colspan]="tileItem.colspan" [rowspan]="tileItem.rowspan" class="info-tile">
+                <div class="section-info-tile">
+                  <h3>About This Section</h3>
+                  <div [innerHTML]="sanitizeHtml(tileItem.extraInfo)"></div>
+                </div>
+                </mat-grid-tile>
+              } @else {
+                <mat-grid-tile [colspan]="tileItem.colspan" [rowspan]="tileItem.rowspan">
+                  <video autoplay [muted]="'muted'" loop playsinline>
+                    <source [src]="tileItem.src" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                  </video>
+                </mat-grid-tile>
+              }
+            }
+
+
+          </mat-grid-list>
+
+        </div>
+      </div>
+    </section>
+  }
+</div>

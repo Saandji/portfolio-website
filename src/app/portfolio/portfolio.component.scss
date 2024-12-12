@@ -1,0 +1,114 @@
+.portfolio-page {
+  padding: 2rem;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.filter-buttons button {
+  background-color: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface-container);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-buttons button.active {
+  background-color: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+}
+
+.filter-buttons button:hover {
+  background-color: var(--mat-sys-secondary);
+  color: var(--mat-sys-on-secondary);
+}
+
+.portfolio-section {
+  margin-bottom: 3rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--mat-sys-on-surface);
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: var(--mat-sys-on-surface);
+}
+
+.section-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+}
+
+.section-content.alternate-layout {
+  flex-direction: row-reverse;
+}
+
+.section-gallery {
+  flex: 1;
+}
+
+mat-grid-list {
+  width: 100%;
+}
+
+mat-grid-tile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+mat-grid-tile {
+  background: transparent; /* Ensure transparency for tiles */
+}
+
+mat-grid-tile .section-info-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface-container);
+  border-radius: 8px; /* Ensures rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  height: 100%; /* Fills the allocated rows */
+}
+mat-grid-tile.info-tile {
+  overflow: hidden;
+  border-radius: 8px;
+}
+mat-grid-tile .section-info-tile p {
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+mat-grid-tile .section-info-tile h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+
+
+.hidden {
+  display: none;
+}
