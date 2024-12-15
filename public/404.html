@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0; url=/"/>
+</head>
+<body>
+<script>
+  // Redirect to the correct Angular route
+  var path = window.location.pathname;
+  var hash = window.location.hash;
+  window.location.replace('/' + path + hash);
+</script>
+</body>
+</html>
