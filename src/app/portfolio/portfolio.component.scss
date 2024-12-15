@@ -1,5 +1,7 @@
 .portfolio-page {
   padding: 2rem;
+  max-width: 1450px; /* Restrict maximum width for large screens */
+  margin: 0 auto; /* Center the content */
 }
 
 .filter-buttons {
@@ -68,6 +70,7 @@ mat-grid-list {
   width: 100%;
 }
 
+/* Video styling */
 mat-grid-tile video {
   width: 100%;
   height: 100%;
