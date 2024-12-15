@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0; url=/"/>
+  <script>
+    // Preserve the full path and redirect to the root
+    var fullPath = window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace('/?' + 'redirect=' + encodeURIComponent(fullPath));
+  </script>
 </head>
 <body>
-<script>
-  // Redirect to the correct Angular route
-  var path = window.location.pathname;
-  var hash = window.location.hash;
-  window.location.replace('/' + path + hash);
-</script>
+<p>Redirecting...</p>
 </body>
 </html>
