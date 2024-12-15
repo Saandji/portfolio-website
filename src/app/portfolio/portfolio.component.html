@@ -30,7 +30,7 @@
       >
         <!-- Gallery -->
         <div class="section-gallery">
-          <mat-grid-list  [cols]="breakpoint" class="responsive-grid" rowHeight="350" gutterSize="16px">
+          <mat-grid-list [cols]="breakpoint" class="responsive-grid" rowHeight="350" gutterSize="16px">
             @for (tileItem of section.videos; track tileItem.id) {
               @if (tileItem.src === '' && tileItem.extraInfo != undefined) {
                 <!-- Additional Tile with Section Information -->

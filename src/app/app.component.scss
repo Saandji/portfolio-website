@@ -49,13 +49,28 @@ mat-toolbar {
 .mobile-sidenav {
   background-color: var(--mat-sys-surface); /* Background for sidenav */
   color: var(--mat-sys-on-surface); /* Text color */
-  width: 80%; /* Set a width for the sidenav */
+  width: 60%; /* Set a width for the sidenav */
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-sidenav.mat-drawer.mat-drawer-end {
+  border-radius: 0px;
+}
+
+.sidenav-container {
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  left: 0;
+  right: 0;
 }
 
 .mobile-sidenav a {
   display: block;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   text-decoration: none;
   color: var(--mat-sys-on-surface);
   font-size: 1.2rem;

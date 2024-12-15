@@ -17,7 +17,7 @@
 </mat-toolbar>
 
 <!-- Sidenav for mobile -->
-<mat-sidenav-container>
+<mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="over" position="end" class="mobile-sidenav" [disableClose]="false">
     <a mat-list-item [routerLink]="'/'" fragment="about" (click)="toggleSidenav()">About Me</a>
     <a mat-list-item [routerLink]="'/'" fragment="contact" (click)="toggleSidenav()">Contact</a>
