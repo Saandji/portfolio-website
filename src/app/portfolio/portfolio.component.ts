@@ -89,12 +89,12 @@ export class PortfolioComponent implements OnInit {
           <p>Attending the outdoor events from different brands and capturing them without disturbing the event flows.</p>
           <p>Great for creating the recap videos, documentary style videos, taking interviews from athletes who
           attended the events or using it for the future promotional materials.</p>
-        `, colspan: 2, rowspan: 1
+        `, colspan: this.getHorizontalColSpan(), rowspan: 1
         },
         {
           id: 4,
           src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com/chamonix_horizontal.mp4',
-          colspan: 2,
+          colspan: this.getHorizontalColSpan(),
           rowspan: 1
         }
       ],
@@ -117,7 +117,7 @@ export class PortfolioComponent implements OnInit {
           <p>I can follow the athlete to their stories, or participate in clients trainings and adventures to share the perspective of how it was.</p>
           <p>This is a great opportunity for creating the recap videos, documentary style videos, taking interviews from athletes who
           attended the events or using it for the future promotional materials.</p>
-        `, colspan: 2, rowspan: 1
+        `, colspan: this.getHorizontalColSpan(), rowspan: 1
         },
         {
           id: 2,
@@ -128,7 +128,7 @@ export class PortfolioComponent implements OnInit {
         {
           id: 4,
           src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com/glacier_training_5min.mp4',
-          colspan: 2,
+          colspan: this.getHorizontalColSpan(),
           rowspan: 1
         }
       ],
@@ -141,9 +141,9 @@ export class PortfolioComponent implements OnInit {
     //   alternateLayout: true,
     //   videos: [
     //     {id: 1, src: '/background-video.mp4', colspan: 1, rowspan: 1},
-    //     {id: 2, src: '/why_video.mp4', colspan: 2, rowspan: 1},
+    //     {id: 2, src: '/why_video.mp4', colspan: this.getHorizontalColSpan(), rowspan: 1},
     //     {id: 3, src: '/background-video.mp4', colspan: 1, rowspan: 2},
-    //     {id: 4, src: '/why_video.mp4', colspan: 2, rowspan: 2},
+    //     {id: 4, src: '/why_video.mp4', colspan: this.getHorizontalColSpan(), rowspan: 2},
     //     {
     //       id: 6, src: '', extraInfo: `
     //     <p>some sport info wadwadawdawadwdwaawd
@@ -152,7 +152,7 @@ export class PortfolioComponent implements OnInit {
     //     some sport info wadwadawdawadwdwaawd</p>
     //   `, colspan: 1, rowspan: 1
     //     },
-    //     {id: 5, src: '/why_video.mp4', colspan: 2, rowspan: 2},
+    //     {id: 5, src: '/why_video.mp4', colspan: this.getHorizontalColSpan(), rowspan: 2},
     //   ],
     // },
 
@@ -165,9 +165,9 @@ export class PortfolioComponent implements OnInit {
     //   alternateLayout: true,
     //   videos: [
     //     {id: 1, src: '/background-video.mp4', colspan: 1, rowspan: 1},
-    //     {id: 2, src: '/why_video.mp4', colspan: 2, rowspan: 1},
+    //     {id: 2, src: '/why_video.mp4', colspan: this.getHorizontalColSpan(), rowspan: 1},
     //     {id: 3, src: '/background-video.mp4', colspan: 1, rowspan: 2},
-    //     {id: 4, src: '/why_video.mp4', colspan: 2, rowspan: 2},
+    //     {id: 4, src: '/why_video.mp4', colspan: this.getHorizontalColSpan(), rowspan: 2},
     //     {
     //       id: 5, src: '', extraInfo: `
     //     This section highlights the serene beauty of nature, showcasing lush landscapes and peaceful vistas.
