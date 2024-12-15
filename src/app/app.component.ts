@@ -20,7 +20,6 @@ import { MatListItem } from '@angular/material/list';
     MatToolbarModule,
     MatButtonModule,
     RouterModule,
-    FooterComponent,
     MatIcon,
     MatSidenav,
     MatListItem,

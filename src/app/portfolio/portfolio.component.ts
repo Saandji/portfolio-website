@@ -38,9 +38,9 @@ export class PortfolioComponent implements OnInit {
       description: 'Showcasing the breathtaking beauty of nature and its tranquility.',
       alternateLayout: false,
       videos: [
-        {id: 2, src: '/background-video.mp4', colspan: this.getHorizontalColSpan(), rowspan: 1},
-        {id: 1, src: '/night_sky_insta.mp4', colspan: 1, rowspan: 2},
-        {id: 3, src: '/Youtube_Nature_Short.mp4', colspan: 1, rowspan: 2},
+        {id: 2, src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com/nature_horizontal.mp4', colspan: this.getHorizontalColSpan(), rowspan: 1},
+        {id: 1, src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com/night_sky_insta.mp4', colspan: 1, rowspan: 2},
+        {id: 3, src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com/Youtube_Nature_Short.mp4', colspan: 1, rowspan: 2},
         {
           id: 6, src: '', extraInfo: `
           <h3>Showcasing Nature's Beauty</h3>
@@ -62,8 +62,8 @@ export class PortfolioComponent implements OnInit {
       description: 'Attending and showing the stories of the outdoor and indoor events.',
       alternateLayout: false,
       videos: [
-        {id: 1, src: '/events/NF_teaser.mp4', colspan: 1, rowspan: 2},
-        {id: 2, src: '/events/chamonix_vertical.mp4', colspan: 1, rowspan: 2},
+        {id: 1, src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com//NF_teaser.mp4', colspan: 1, rowspan: 2},
+        {id: 2, src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com/chamonix_vertical.mp4', colspan: 1, rowspan: 2},
         {
           id: 6, src: '', extraInfo: `
           <p>Attending the outdoor events from different brands and capturing them without disturbing the event flows.</p>
@@ -71,7 +71,7 @@ export class PortfolioComponent implements OnInit {
           attended the events or using it for the future promotional materials.</p>
         `, colspan: 2, rowspan: 1
         },
-        {id: 4, src: '/events/chamonix_horizontal.mp4', colspan: 2, rowspan: 1}
+        {id: 4, src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com/chamonix_horizontal.mp4', colspan: 2, rowspan: 1}
       ],
     },
     {
@@ -80,7 +80,7 @@ export class PortfolioComponent implements OnInit {
       description: 'Documenting One or Multi-day adventure, Athlete Stories and Trainings.',
       alternateLayout: false,
       videos: [
-        {id: 1, src: '/adventures/via_ferrata_nastya.mp4', colspan: 1, rowspan: 2},
+        {id: 1, src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com/via_ferrata_nastya.mp4', colspan: 1, rowspan: 2},
         {
           id: 6, src: '', extraInfo: `
           <p>No matter what it is - training in the gym, via ferrata in Spain, training on the glacier or mutipitch climb</p>
@@ -89,8 +89,8 @@ export class PortfolioComponent implements OnInit {
           attended the events or using it for the future promotional materials.</p>
         `, colspan: 2, rowspan: 1
         },
-        {id: 2, src: '/adventures/strongman_ulfr.mp4', colspan: 1, rowspan: 2},
-        {id: 4, src: '/adventures/glacier_training_5min.mp4', colspan: 2, rowspan: 1}
+        {id: 2, src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com/strongman_ulfr.mp4', colspan: 1, rowspan: 2},
+        {id: 4, src: 'https://samshend-assets.s3.eu-central-1.amazonaws.com/glacier_training_5min.mp4', colspan: 2, rowspan: 1}
       ],
     },
 
